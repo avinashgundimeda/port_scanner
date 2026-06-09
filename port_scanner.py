@@ -31,7 +31,6 @@ except socket.gaierror:
 start_port = int(sys.argv[2])
 end_port = int(sys.argv[3])
 
-# Common port-to-service mapping
 PORT_SERVICES = {
     21: "FTP",
     22: "SSH",
@@ -94,7 +93,6 @@ for port in range(start_port, end_port + 1):
     threads.append(thread)
     thread.start()
 
-# Wait for all threads to complete
 for thread in threads:
     thread.join()
 
